@@ -1,13 +1,14 @@
-from flask import Flask
+from flask import Flask, send_from_directory , request
 
+app = Flask(__name__, static_url_path='', static_folder='assets/client')
 
-app = Flask(__name__)
-
+@app.get('/')
+def serve_client():
+    return send_from_directory('assets/client', 'index.html')
 
 @app.get('/tasks')
-def list_or_find():
+def list_or_find(): 
     return ''
-
 
 @app.post('/tasks')
 def create():
