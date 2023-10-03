@@ -1,6 +1,7 @@
 from flask import Flask, send_from_directory , request
-
+from typing import Any
 app = Flask(__name__, static_url_path='', static_folder='assets/client')
+
 
 @app.get('/')
 def serve_client():
@@ -8,10 +9,12 @@ def serve_client():
 
 @app.get('/tasks')
 def list_or_find(): 
+    
     return ''
 
 @app.post('/tasks')
 def create():
+
     return ''
 
 
